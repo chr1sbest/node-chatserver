@@ -1,0 +1,16 @@
+{
+    "name" : "RealTimeWebChat",
+    "version" : "0.0.0",
+    "descrition" : "Real time web chat",
+    "dependencies" : {
+        "express" : "latest",
+        "socket.io" : "latest",
+        "grunt-cli" : "latest",
+        "grunt-contrib-watch" : "latest",
+        "grunt-express" : "latest",
+        "jade" : "latest"
+    },
+    "author": "Chris Best"
+}
+
+
