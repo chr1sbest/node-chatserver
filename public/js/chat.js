@@ -6,15 +6,21 @@ window.onload = function() {
     ,   content = document.getElementById('content')
     ,   name = document.getElementById('name');
 
-    //Send message on 'send' click event
-    sendButton.onclick = function() {
-        var text = field.value;
-        var username = name.value;
-        if (!username) {alert("Enter name!"); return;}
-        socket.emit('send', {message: text, username: username});
+    // Message validation
+    sendMessage = function() {
+        var text = field.value
+        ,   username = name.value;
+
+        if (!username) {
+            alert("Enter name!");  // Validate name
+            return;
+        } else {
+            socket.emit('send', {message: text, username: username});
+            field.value = "";
+        }
     };
     
-    //Message handling
+    // Message handling
     socket.on('message', function (data) {
         if (data.message) {
             var messageHTML = ''
@@ -26,9 +32,22 @@ window.onload = function() {
                 messageHTML += '<b>' + chatter + ': </b>' + msgcontent + '<br>';
             };
             content.innerHTML = messageHTML;
+            content.scrollTop = content.scrollHeight;
         } else {
             console.log("There was a problem: ", data);
         }
     });
+
 }
 
+//Event Handlers
+$(document).ready(function() {
+    $("#field").keyup(function(e) {
+        if(e.keyCode == 13) {
+            sendMessage();
+        }
+    });
+    $('#sendButton').click(function() {
+        sendMessage();
+    });
+});

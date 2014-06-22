@@ -2,10 +2,10 @@
     "name" : "RealTimeWebChat",
     "version" : "0.0.0",
     "descrition" : "Real time web chat",
+    "main" : "app.js",
     "dependencies" : {
         "express" : "latest",
         "socket.io" : "latest",
-        "underscore" : "latest",
         "supervisor" : "latest",
         "jade" : "latest"
     },
