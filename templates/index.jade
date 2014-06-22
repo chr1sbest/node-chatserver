@@ -1,15 +1,23 @@
-doctype html
-html
-    head
-        title= "Real time web chat"
-        script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js")
-        script(src="/chat.js")
-        script(src="socket.io/socket.io.js")
-    body
-        #content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
-        .controls
-            | Name: 
-            input#name(style='width:350px;')
+extends layout
+
+block content
+    .row
+        .col-md-8.col-md-offset-2
+            h1 Hello World!
+            p This is a simple chat application using Socket.io on Node.js Express with some Twitter Bootstrap flavor :D
             br
-            input#field(style='width:350px;')
-            input#send(type='button', value='send')
+            br
+
+    .row
+        #controls.col-sm-4.col-sm-offset-2(style="padding-top:20px")
+            .controls
+                .input-group
+                    span.input-group-addon @
+                    input#name(type="text" class="form-control" placeholder="Name")
+                br
+                .input-group
+                textarea#field(type="text" class="form-control" rows="6")
+                br
+                input#send.btn.btn-primary(type='button', value='Send')
+        #content.col-sm-4.col-sm-offset-2
+
