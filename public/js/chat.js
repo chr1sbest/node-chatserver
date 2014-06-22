@@ -1,6 +1,6 @@
 window.onload = function() {
     var messages = []
-    ,   socket = io.connect('http://localhost:5000') 
+    ,   socket = io.connect() 
     ,   field = document.getElementById('field') 
     ,   sendButton = document.getElementById('send')
     ,   content = document.getElementById('content')

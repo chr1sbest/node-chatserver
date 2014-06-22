@@ -1,12 +1,12 @@
 var express = require("express")
 ,   server = require('http').createServer(app)
 ,   app = express()
-,   port = 5000
+,   port = process.env.PORT || 5000
 ,   io = require('socket.io').listen(app.listen(port))
 ,   routes = require('./routes.js');
 
 //Config
-app.set('port', process.env.PORT || 5000);
+app.set('port', port);
 app.set('views', __dirname + '/templates');
 app.set('view engine', "jade");
 app.engine('jade', require('jade').__express);
