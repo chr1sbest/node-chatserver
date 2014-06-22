@@ -6,9 +6,7 @@
         "express" : "latest",
         "socket.io" : "latest",
         "underscore" : "latest",
-        "grunt-cli" : "latest",
-        "grunt-contrib-watch" : "latest",
-        "grunt-express" : "latest",
+        "supervisor" : "latest",
         "jade" : "latest"
     },
     "author": "Chris Best"
