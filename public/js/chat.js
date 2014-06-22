@@ -47,7 +47,7 @@ $(document).ready(function() {
             sendMessage();
         }
     });
-    $('#sendButton').click(function() {
+    $('#send').click(function() {
         sendMessage();
     });
 });
