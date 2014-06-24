@@ -1,23 +1,24 @@
 extends layout
 
 block content
-    .row
-        .col-md-8.col-md-offset-2
-            h1 Hello World!
-            p This is a simple chat application using Socket.io on Node.js Express with some Twitter Bootstrap flavor :D
-            br
-            br
+    .bodyContainer
+        .row
+            .col-md-8.col-md-offset-2
+                h1 Hello World!
+                p This is a simple chat application using Socket.io on Node.js Express with some Twitter Bootstrap flavor :D
+                br
+                br
 
-    .row
-        #controls.col-sm-4.col-sm-offset-2(style="padding-top:20px")
-            .controls
-                .input-group
-                    span.input-group-addon @
-                    input#name(type="text" class="form-control" placeholder="Name")
-                br
-                .input-group
-                textarea#field(type="text" class="form-control" rows="6")
-                br
-                input#send.btn.btn-primary(type='button', value='Send')
-        #content.col-sm-4.col-sm-offset-2
+        .row
+            #controls.col-sm-4.col-sm-offset-2(style="padding-top:20px")
+                .controls
+                    .input-group
+                        span.input-group-addon @
+                        input#name(type="text" class="form-control" placeholder="Name")
+                    br
+                    .input-group
+                    textarea#field(type="text" class="form-control" rows="6")
+                    br
+                    input#send.btn.btn-primary(type='button', value='Send')
+            #content.col-sm-4.col-sm-offset-2
 
