@@ -33,6 +33,7 @@ window.onload = function() {
             };
             content.innerHTML = messageHTML;
             content.scrollTop = content.scrollHeight;
+            window.newMessages += 1
         } else {
             console.log("There was a problem: ", data);
         }
@@ -51,3 +52,4 @@ $(document).ready(function() {
         sendMessage();
     });
 });
+
