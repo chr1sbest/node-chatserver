@@ -3,7 +3,8 @@ var express = require("express")
 ,   app = express()
 ,   port = process.env.PORT || 5000
 ,   io = require('socket.io').listen(app.listen(port))
-,   routes = require('./routes.js');
+,   routes = require('./routes.js')
+,   connected = false;
 
 //Config
 app.set('port', port);
@@ -16,15 +17,14 @@ app.use(express.static(__dirname + '/public'));
 routes(app);
 
 //Socket.io
-io.sockets.on('connection', function(socket) {
-    if (!window.connected) {
+if (!connected) {
+    io.sockets.on('connection', function(socket) {
         socket.emit('message',  {message: 'Welcome to the chat!'});
         socket.on('send', function(data) {
             io.sockets.emit('message', data);
+            connected = true;
         });
-    }
-    window.connected = true;
-});
-
+    });
+}
 
 module.exports = app;
